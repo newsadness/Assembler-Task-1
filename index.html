@@ -1,0 +1,58 @@
+<DOCTYPE html> 
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Assembler Task 1</title>
+        <link rel="stylesheet" href="Assembler1.css"> 
+    </head>
+    <body class="default">
+<div class="text"> Задача 1</div>
+        <table class="table"> 
+          <tr>
+              <td>
+              <p class="text2">
+                  Код программы: </br>
+section .data </br>
+    N dd 10              ; N = 10 (32бит) </br>
+    fmt db "N = %d", 10, 0 </br>
+
+section .text </br>
+    extern printf </br>        
+
+global main </br>             
+main: </br>
+    mov eax, [N]       ; Задание </br>
+    shr eax, 1  </br>       
+    mov [N], eax  </br>     
+
+    ; Вывод значения N </br>
+    push eax  </br>
+    push fmt  </br>      
+    call printf  </br>  
+    add esp, 8  </br>
+
+    ; Завершение программы </br>
+    mov eax, 0 </br>        
+    ret </br> 
+</p>
+
+
+          </td>
+          </tr>
+<tr> 
+    <td>
+    <p class="text"> Скриншот результата </p>
+    <img class="img" src="https://github.com/newsadness/Assembler-Task-1/blob/main/11.png?raw=true">
+    </td>
+</tr>
+          <tr>
+             <td> 
+                 <a href="https://newsadness.github.io/1st-week/"> 
+                   <button class="button"> назад </button> 
+                 </a> 
+            </td>
+          </tr>
+        </table> 
+    </body>
+</html>
+</DOCTYPE>
